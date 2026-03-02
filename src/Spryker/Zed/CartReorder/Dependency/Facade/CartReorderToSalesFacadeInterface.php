@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\OrderListTransfer;
 
 interface CartReorderToSalesFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderListRequestTransfer $orderListRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderListTransfer
-     */
     public function getOffsetPaginatedCustomerOrderList(OrderListRequestTransfer $orderListRequestTransfer): OrderListTransfer;
 }

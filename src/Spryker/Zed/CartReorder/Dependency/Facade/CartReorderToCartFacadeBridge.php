@@ -25,11 +25,6 @@ class CartReorderToCartFacadeBridge implements CartReorderToCartFacadeInterface
         $this->cartFacade = $cartFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function addToCart(CartChangeTransfer $cartChangeTransfer): QuoteResponseTransfer
     {
         return $this->cartFacade->addToCart($cartChangeTransfer);

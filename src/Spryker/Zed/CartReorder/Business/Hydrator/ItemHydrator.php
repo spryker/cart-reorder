@@ -19,11 +19,6 @@ class ItemHydrator implements ItemHydratorInterface
     {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrate(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         $cartReorderTransfer = $this->executeCartReorderItemHydratorPlugins($cartReorderTransfer);
@@ -31,11 +26,6 @@ class ItemHydrator implements ItemHydratorInterface
         return $this->hydrateLeftoverItems($cartReorderTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     protected function hydrateLeftoverItems(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         foreach ($cartReorderTransfer->getOrderItems() as $index => $itemTransfer) {
@@ -57,12 +47,6 @@ class ItemHydrator implements ItemHydratorInterface
         return $cartReorderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isItemAlreadyReordered(CartReorderTransfer $cartReorderTransfer, ItemTransfer $itemTransfer): bool
     {
         foreach ($cartReorderTransfer->getReorderItems() as $reorderItemTransfer) {
@@ -74,11 +58,6 @@ class ItemHydrator implements ItemHydratorInterface
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     protected function executeCartReorderItemHydratorPlugins(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         foreach ($this->cartReorderItemHydratorPlugins as $cartReorderItemHydratorPlugin) {

@@ -92,11 +92,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const PLUGINS_CART_REORDER_ORDER_PROVIDER = 'PLUGINS_CART_REORDER_ORDER_PROVIDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -119,11 +114,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartFacade(Container $container): Container
     {
         $container->set(static::FACADE_CART, function (Container $container) {
@@ -133,11 +123,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesFacade(Container $container): Container
     {
         $container->set(static::FACADE_SALES, function (Container $container) {
@@ -147,11 +132,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderRequestValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_REQUEST_VALIDATOR, function () {
@@ -161,11 +141,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderQuoteProviderStrategyPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_QUOTE_PROVIDER_STRATEGY, function () {
@@ -175,11 +150,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderOrderItemFilterPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_ORDER_ITEM_FILTER, function () {
@@ -189,11 +159,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderValidatorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_VALIDATOR, function () {
@@ -203,11 +168,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderValidatorPluginsForOrderAmendment(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_VALIDATOR_FOR_ORDER_AMENDMENT, function () {
@@ -217,11 +177,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderValidatorPluginsForOrderAmendmentAsync(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_VALIDATOR_FOR_ORDER_AMENDMENT_ASYNC, function () {
@@ -231,11 +186,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartPreReorderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_PRE_REORDER, function () {
@@ -245,11 +195,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderItemHydratorPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_ITEM_HYDRATOR, function () {
@@ -259,11 +204,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderPreAddToCartPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_PRE_ADD_TO_CART, function () {
@@ -273,11 +213,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderPreAddToCartPluginsForOrderAmendment(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_PRE_ADD_TO_CART_FOR_ORDER_AMENDMENT, function () {
@@ -287,11 +222,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderPreAddToCartPluginsForOrderAmendmentAsync(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_PRE_ADD_TO_CART_FOR_ORDER_AMENDMENT_ASYNC, function () {
@@ -301,11 +231,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartPostReorderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_POST_REORDER, function () {
@@ -315,11 +240,6 @@ class CartReorderDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCartReorderOrderProviderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_CART_REORDER_ORDER_PROVIDER, function () {

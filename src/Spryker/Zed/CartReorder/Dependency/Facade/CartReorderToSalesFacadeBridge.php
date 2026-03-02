@@ -25,11 +25,6 @@ class CartReorderToSalesFacadeBridge implements CartReorderToSalesFacadeInterfac
         $this->salesFacade = $salesFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderListRequestTransfer $orderListRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderListTransfer
-     */
     public function getOffsetPaginatedCustomerOrderList(OrderListRequestTransfer $orderListRequestTransfer): OrderListTransfer
     {
         return $this->salesFacade->getOffsetPaginatedCustomerOrderList($orderListRequestTransfer);

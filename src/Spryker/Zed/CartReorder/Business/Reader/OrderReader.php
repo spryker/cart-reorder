@@ -24,11 +24,6 @@ class OrderReader implements OrderReaderInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer|null
-     */
     public function findCustomerOrder(CartReorderRequestTransfer $cartReorderRequestTransfer): ?OrderTransfer
     {
         $orderListRequestTransfer = (new OrderListRequestTransfer())
@@ -48,11 +43,6 @@ class OrderReader implements OrderReaderInterface
         return $this->executeCartReorderOrderProviderPlugins($cartReorderRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer|null
-     */
     protected function executeCartReorderOrderProviderPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer
     ): ?OrderTransfer {

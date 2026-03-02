@@ -28,9 +28,6 @@ class CartReorderClientTester extends Actor
 {
     use _generated\CartReorderClientTesterActions;
 
-    /**
-     * @return \Spryker\Client\CartReorder\CartReorderClientInterface
-     */
     public function getClient(): CartReorderClientInterface
     {
         return $this->getLocator()->cartReorder()->client();

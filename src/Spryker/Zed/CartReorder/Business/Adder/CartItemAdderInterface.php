@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\CartReorderTransfer;
 
 interface CartItemAdderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function addToCart(CartReorderTransfer $cartReorderTransfer): CartReorderResponseTransfer;
 }

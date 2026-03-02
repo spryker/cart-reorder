@@ -31,9 +31,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CartReorderBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CartReorder\Business\Creator\CartReorderCreatorInterface
-     */
     public function createCartReorderCreator(): CartReorderCreatorInterface
     {
         return new CartReorderCreator(
@@ -48,9 +45,6 @@ class CartReorderBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Business\Adder\CartItemAdderInterface
-     */
     public function createCartItemAdder(): CartItemAdderInterface
     {
         return new CartItemAdder(
@@ -59,9 +53,6 @@ class CartReorderBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Business\Hydrator\ItemHydratorInterface
-     */
     public function createItemHydrator(): ItemHydratorInterface
     {
         return new ItemHydrator(
@@ -69,9 +60,6 @@ class CartReorderBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Business\Validator\CartReorderValidatorInterface
-     */
     public function createCartReorderValidator(): CartReorderValidatorInterface
     {
         return new CartReorderValidator(
@@ -80,9 +68,6 @@ class CartReorderBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Business\Reader\OrderReaderInterface
-     */
     public function createOrderReader(): OrderReaderInterface
     {
         return new OrderReader(
@@ -91,17 +76,11 @@ class CartReorderBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Dependency\Facade\CartReorderToCartFacadeInterface
-     */
     public function getCartFacade(): CartReorderToCartFacadeInterface
     {
         return $this->getProvidedDependency(CartReorderDependencyProvider::FACADE_CART);
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorder\Dependency\Facade\CartReorderToSalesFacadeInterface
-     */
     public function getSalesFacade(): CartReorderToSalesFacadeInterface
     {
         return $this->getProvidedDependency(CartReorderDependencyProvider::FACADE_SALES);

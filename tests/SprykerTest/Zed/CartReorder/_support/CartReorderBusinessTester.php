@@ -39,11 +39,6 @@ class CartReorderBusinessTester extends Actor
      */
     public const DEFAULT_OMS_PROCESS_NAME = 'Test01';
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer|null $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function createOrder(?CustomerTransfer $customerTransfer = null): OrderTransfer
     {
         $customerTransfer = $customerTransfer ?? $this->haveCustomer();

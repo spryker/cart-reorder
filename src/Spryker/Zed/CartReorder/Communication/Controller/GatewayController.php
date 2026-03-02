@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function reorderAction(CartReorderRequestTransfer $cartReorderRequestTransfer): CartReorderResponseTransfer
     {
         return $this->getFacade()->reorder($cartReorderRequestTransfer);

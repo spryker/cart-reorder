@@ -28,11 +28,6 @@ class CartItemAdder implements CartItemAdderInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function addToCart(CartReorderTransfer $cartReorderTransfer): CartReorderResponseTransfer
     {
         $cartChangeTransfer = (new CartChangeTransfer())
@@ -50,12 +45,6 @@ class CartItemAdder implements CartItemAdderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteResponseTransfer $quoteResponseTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     protected function mapQuoteResponseTransferToCartReorderResponseTransfer(
         QuoteResponseTransfer $quoteResponseTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer
@@ -85,11 +74,6 @@ class CartItemAdder implements CartItemAdderInterface
         return $itemTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartChangeTransfer
-     */
     protected function executeCartReorderPreAddToCartPlugins(CartChangeTransfer $cartChangeTransfer): CartChangeTransfer
     {
         $quoteProcessFlowName = $cartChangeTransfer->getQuoteOrFail()->getQuoteProcessFlow()?->getNameOrFail();

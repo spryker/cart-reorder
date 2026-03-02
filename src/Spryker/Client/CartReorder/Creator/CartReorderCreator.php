@@ -27,11 +27,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function reorder(CartReorderRequestTransfer $cartReorderRequestTransfer): CartReorderResponseTransfer
     {
         $quoteTransfer = $this->executeCartReorderQuoteProviderStrategyPlugins($cartReorderRequestTransfer);
@@ -46,11 +41,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         return $cartReorderResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer|null
-     */
     protected function executeCartReorderQuoteProviderStrategyPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer
     ): ?QuoteTransfer {

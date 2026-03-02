@@ -57,11 +57,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function reorder(CartReorderRequestTransfer $cartReorderRequestTransfer): CartReorderResponseTransfer
     {
         $this->assertRequiredFields($cartReorderRequestTransfer);
@@ -90,13 +85,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         });
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     protected function executeReorderTransaction(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         OrderTransfer $orderTransfer,
@@ -176,11 +164,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         return $cartReorderTransfer->setOrderItems($orderItemTransfers);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer|null
-     */
     protected function executeCartReorderQuoteProviderStrategyPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer
     ): ?QuoteTransfer {
@@ -197,12 +180,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     protected function executeCartPreReorderPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderTransfer $cartReorderTransfer
@@ -214,11 +191,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         return $cartReorderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     protected function executeCartPostReorderPlugins(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer
     {
         foreach ($this->cartPostReorderPlugins as $cartPostReorderPlugin) {
@@ -243,11 +215,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
             ->setParameters($parameters);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return void
-     */
     protected function assertRequiredFields(CartReorderRequestTransfer $cartReorderRequestTransfer): void
     {
         $cartReorderRequestTransfer
@@ -276,11 +243,6 @@ class CartReorderCreator implements CartReorderCreatorInterface
         return $filteredOrderItems;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     protected function cloneItemTransfer(ItemTransfer $itemTransfer): ItemTransfer
     {
         return (new ItemTransfer())->fromArray($itemTransfer->toArray());

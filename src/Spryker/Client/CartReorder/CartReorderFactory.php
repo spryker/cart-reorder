@@ -20,9 +20,6 @@ use Spryker\Client\Kernel\AbstractFactory;
  */
 class CartReorderFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CartReorder\Creator\CartReorderCreatorInterface
-     */
     public function createCartReorderCreator(): CartReorderCreatorInterface
     {
         return new CartReorderCreator(
@@ -32,9 +29,6 @@ class CartReorderFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CartReorder\Zed\CartReorderStubInterface
-     */
     public function createCartReorderStub(): CartReorderStubInterface
     {
         return new CartReorderStub(
@@ -42,17 +36,11 @@ class CartReorderFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CartReorder\Dependency\Client\CartReorderToQuoteClientInterface
-     */
     public function getQuoteClient(): CartReorderToQuoteClientInterface
     {
         return $this->getProvidedDependency(CartReorderDependencyProvider::CLIENT_QUOTE);
     }
 
-    /**
-     * @return \Spryker\Client\CartReorder\Dependency\Client\CartReorderToZedRequestClientInterface
-     */
     public function getZedRequestClient(): CartReorderToZedRequestClientInterface
     {
         return $this->getProvidedDependency(CartReorderDependencyProvider::CLIENT_ZED_REQUEST);

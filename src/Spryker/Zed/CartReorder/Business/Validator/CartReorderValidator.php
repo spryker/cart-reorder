@@ -24,11 +24,6 @@ class CartReorderValidator implements CartReorderValidatorInterface
     ) {
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function validateRequest(CartReorderRequestTransfer $cartReorderRequestTransfer): CartReorderResponseTransfer
     {
         return $this->executeCartReorderRequestValidatorPlugins(
@@ -37,22 +32,11 @@ class CartReorderValidator implements CartReorderValidatorInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     public function validate(CartReorderTransfer $cartReorderTransfer): CartReorderResponseTransfer
     {
         return $this->executeCartReorderValidatorPlugins($cartReorderTransfer, new CartReorderResponseTransfer());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderRequestTransfer $cartReorderRequestTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     protected function executeCartReorderRequestValidatorPlugins(
         CartReorderRequestTransfer $cartReorderRequestTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer
@@ -67,12 +51,6 @@ class CartReorderValidator implements CartReorderValidatorInterface
         return $cartReorderResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     * @param \Generated\Shared\Transfer\CartReorderResponseTransfer $cartReorderResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderResponseTransfer
-     */
     protected function executeCartReorderValidatorPlugins(
         CartReorderTransfer $cartReorderTransfer,
         CartReorderResponseTransfer $cartReorderResponseTransfer

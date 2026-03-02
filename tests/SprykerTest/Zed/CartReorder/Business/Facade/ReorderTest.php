@@ -60,9 +60,6 @@ class ReorderTest extends Unit
      */
     protected CartReorderBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -70,9 +67,6 @@ class ReorderTest extends Unit
         $this->tester->configureTestStateMachine([CartReorderBusinessTester::DEFAULT_OMS_PROCESS_NAME]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReorderItemsToQuote(): void
     {
         // Arrange
@@ -90,9 +84,6 @@ class ReorderTest extends Unit
         $this->assertSame($orderTransfer->getItems()->count(), $quoteTransfer->getItems()->count());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldReorderConcreteItems(): void
     {
         // Arrange
@@ -115,9 +106,6 @@ class ReorderTest extends Unit
         $this->assertSame($itemTransfer->getSku(), $quoteTransfer->getItems()->offsetGet(0)->getSku());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenOrderReferenceNotSet(): void
     {
         // Arrange
@@ -135,9 +123,6 @@ class ReorderTest extends Unit
         $this->tester->getFacade()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowExceptionWhenCustomerReferenceNotSet(): void
     {
         // Arrange
@@ -155,9 +140,6 @@ class ReorderTest extends Unit
         $this->tester->getFacade()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotReorderNonCustomerOrder(): void
     {
         // Arrange
@@ -178,9 +160,6 @@ class ReorderTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldNotReorderWithoutQuote(): void
     {
         // Arrange
@@ -269,9 +248,6 @@ class ReorderTest extends Unit
         $this->tester->getFacade()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testOrderAmendmentContextIsCalled(): void
     {
         // Assert
@@ -293,9 +269,6 @@ class ReorderTest extends Unit
         $this->tester->getFacade()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testOrderAmendmentAsyncContextIsCalled(): void
     {
         // Assert
@@ -317,9 +290,6 @@ class ReorderTest extends Unit
         $this->tester->getFacade()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderRequestValidatorPluginInterface
-     */
     protected function getCartReorderRequestValidatorPluginMock(): CartReorderRequestValidatorPluginInterface
     {
         $cartReorderRequestValidatorPluginMock = $this
@@ -333,9 +303,6 @@ class ReorderTest extends Unit
         return $cartReorderRequestValidatorPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderQuoteProviderStrategyPluginInterface
-     */
     protected function getCartReorderQuoteProviderStrategyPluginMock(): CartReorderQuoteProviderStrategyPluginInterface
     {
         $cartReorderQuoteProviderStrategyPluginMock = $this
@@ -355,9 +322,6 @@ class ReorderTest extends Unit
         return $cartReorderQuoteProviderStrategyPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderValidatorPluginInterface
-     */
     protected function getCartReorderValidatorPluginMock(): CartReorderValidatorPluginInterface
     {
         $cartReorderValidatorPluginMock = $this
@@ -371,9 +335,6 @@ class ReorderTest extends Unit
         return $cartReorderValidatorPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderOrderItemFilterPluginInterface
-     */
     protected function getCartReorderOrderItemFilterPluginMock(): CartReorderOrderItemFilterPluginInterface
     {
         $cartReorderOrderItemFilterPluginMock = $this
@@ -387,9 +348,6 @@ class ReorderTest extends Unit
         return $cartReorderOrderItemFilterPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartPreReorderPluginInterface
-     */
     protected function getCartPreReorderPluginMock(): CartPreReorderPluginInterface
     {
         $cartPreReorderPluginMock = $this
@@ -409,9 +367,6 @@ class ReorderTest extends Unit
         return $cartPreReorderPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderItemHydratorPluginInterface
-     */
     protected function getCartReorderItemHydratorPluginMock(): CartReorderItemHydratorPluginInterface
     {
         $cartReorderItemHydratorPluginMock = $this
@@ -428,9 +383,6 @@ class ReorderTest extends Unit
         return $cartReorderItemHydratorPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartReorderPreAddToCartPluginInterface
-     */
     protected function getCartReorderPreAddToCartPluginMock(): CartReorderPreAddToCartPluginInterface
     {
         $cartReorderPreAddToCartPluginMock = $this
@@ -447,9 +399,6 @@ class ReorderTest extends Unit
         return $cartReorderPreAddToCartPluginMock;
     }
 
-    /**
-     * @return \Spryker\Zed\CartReorderExtension\Dependency\Plugin\CartPostReorderPluginInterface
-     */
     protected function getCartPostReorderPluginMock(): CartPostReorderPluginInterface
     {
         $cartPostReorderPluginMock = $this

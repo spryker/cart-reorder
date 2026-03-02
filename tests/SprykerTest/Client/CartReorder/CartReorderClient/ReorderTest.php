@@ -31,9 +31,6 @@ class ReorderTest extends Unit
      */
     protected CartReorderClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldExecuteCartReorderQuoteProviderStrategyPluginStack(): void
     {
         // Assert
@@ -53,9 +50,6 @@ class ReorderTest extends Unit
         $this->tester->getClient()->reorder($cartReorderRequestTransfer);
     }
 
-    /**
-     * @return \Spryker\Client\CartReorderExtension\Dependency\Plugin\CartReorderQuoteProviderStrategyPluginInterface
-     */
     protected function getCartReorderQuoteProviderStrategyPluginMock(): CartReorderQuoteProviderStrategyPluginInterface
     {
         $cartReorderQuoteProviderStrategyPluginMock = $this

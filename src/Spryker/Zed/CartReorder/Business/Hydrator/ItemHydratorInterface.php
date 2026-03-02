@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\CartReorderTransfer;
 
 interface ItemHydratorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartReorderTransfer $cartReorderTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartReorderTransfer
-     */
     public function hydrate(CartReorderTransfer $cartReorderTransfer): CartReorderTransfer;
 }

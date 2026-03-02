@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\QuoteResponseTransfer;
 
 interface CartReorderToCartFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CartChangeTransfer $cartChangeTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function addToCart(CartChangeTransfer $cartChangeTransfer): QuoteResponseTransfer;
 }
